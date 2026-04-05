@@ -1,4 +1,4 @@
-import { AppData, ThemeConfig } from '../types';
+import type { AppData, ThemeConfig } from '../types';
 
 export const DEFAULT_THEME: ThemeConfig = {
   primaryColor: '#c0392b',

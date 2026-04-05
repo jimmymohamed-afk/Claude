@@ -1,4 +1,4 @@
-import { AppData } from '../types';
+import type { AppData } from '../types';
 
 export function exportDataAsJson(data: AppData): void {
   const json = JSON.stringify(data, null, 2);

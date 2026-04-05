@@ -1,4 +1,4 @@
-import { AppData } from '../types';
+import type { AppData } from '../types';
 
 const STORAGE_KEY = 'rmb_data';
 
