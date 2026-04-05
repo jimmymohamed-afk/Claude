@@ -2,6 +2,11 @@ import { Link, Routes, Route, NavLink } from 'react-router-dom';
 import { Home, LayoutGrid, UtensilsCrossed, Palette, Settings, Database, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useMenu } from '../../context/MenuContext';
+import { CategoryManager } from './CategoryManager';
+import { ItemManager } from './ItemManager';
+import { ThemeEditor } from './ThemeEditor';
+import { RestaurantSettings } from './RestaurantSettings';
+import { DataManager } from './DataManager';
 
 const navItems = [
   { to: '/admin', label: 'Dashboard', icon: LayoutGrid, end: true },
@@ -62,13 +67,6 @@ function Dashboard() {
   );
 }
 
-// Placeholder pages — will be replaced with full implementations
-const PlaceholderPage = ({ title }: { title: string }) => (
-  <div className="p-6 md:p-8">
-    <h2 className="text-2xl font-heading font-bold text-text-main mb-2">{title}</h2>
-    <p className="text-text-main/50 text-sm">Full {title.toLowerCase()} management coming soon.</p>
-  </div>
-);
 
 export function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -149,11 +147,11 @@ export function AdminLayout() {
         <main className="flex-1 overflow-auto text-text-main">
           <Routes>
             <Route index element={<Dashboard />} />
-            <Route path="categories" element={<PlaceholderPage title="Categories" />} />
-            <Route path="items" element={<PlaceholderPage title="Menu Items" />} />
-            <Route path="theme" element={<PlaceholderPage title="Theme Editor" />} />
-            <Route path="settings" element={<PlaceholderPage title="Restaurant Settings" />} />
-            <Route path="data" element={<PlaceholderPage title="Data Manager" />} />
+            <Route path="categories" element={<CategoryManager />} />
+            <Route path="items" element={<ItemManager />} />
+            <Route path="theme" element={<ThemeEditor />} />
+            <Route path="settings" element={<RestaurantSettings />} />
+            <Route path="data" element={<DataManager />} />
           </Routes>
         </main>
       </div>
